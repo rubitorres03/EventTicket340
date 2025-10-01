@@ -1,4 +1,5 @@
 // TO DO: #include all the standard libraries and your own libraries here
+#include "LinkedBag.h"
 
 // To DO: define the class Organizer with the necessary functions and data fields
 
