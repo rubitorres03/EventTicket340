@@ -3,6 +3,7 @@
 
 // TO DO: #include any other libraries you need
 #include "EventTicket340.h"
+#include "LinkedBag.h"
 
 
 using namespace std;
