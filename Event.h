@@ -28,6 +28,10 @@
 	// Operator overloading function prototype:
 	bool operator==(const Event& otherEvent) const;
 
+	//Functions that Event should have
+	void discplay() const;
+	bool modify() const;
+	bool sell(int quantity) const;
 	};
 #endif
 

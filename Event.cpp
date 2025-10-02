@@ -38,6 +38,9 @@
    bool Event::operator==(const Event& otherEvent) const {
       return Event::name == otherEvent.name;
    }
+
+
+   
 }
 
 
