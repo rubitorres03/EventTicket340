@@ -37,7 +37,7 @@ void displayOrganizerMenu(Organizer& organizer){
 			case 1:{
 				// TO DO: display organizer's profile information
 				//      : e.g. organizer.displayProfile();
-				organizerChoice.displayProfile();
+				organizer.displayProfile();
 				break;
 			}
 			case 2: {
@@ -46,7 +46,7 @@ void displayOrganizerMenu(Organizer& organizer){
 				string newPassword;
 				cout << "Please Enter new Password: ";
 				getline(cin,newPassword);
-				organizerChoice.setPassword(newPassword);
+				organizer.setPassword(newPassword);
 				// organizer.setPassword(string)
 				break;
 			}
@@ -132,7 +132,7 @@ int main(){
 
 	// call eventTicket340 createOrganizer function 
 	// replace /*...*/ with the right parameters
-	eventTicket340.createOrganizer(/*...*/);
+	eventTicket340.createOrganizer(username,email,password,bio,profilePicture);
 
 	// Retrieve the organizer 
 	Organizer currentOrganizer = eventTicket340.getOrganizer();
