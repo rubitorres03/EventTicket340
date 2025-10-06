@@ -26,6 +26,6 @@ public:
         std::string streamLink;
         std::string audience;
         std::string accessCode = "ZT4iWsVSdP";
-}
+};
 
 #endif

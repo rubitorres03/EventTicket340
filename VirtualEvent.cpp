@@ -39,7 +39,8 @@ VirtualEvent::VirtualEvent(const std::string& name, const std::string& descripti
      bool VirtualEvent::sell(int quantity) {
         for(int i = 0;i < quantity;i++) {
             soldTicketsCount++;
-            std::cout << "Your access code is : " << accessCode << std::endl;
+            std::string newCode = accessCode + std::to_string(soldTicketsCount); //new access code each time
+            std::cout << "Your access code is : " << newCode << std::endl;
         }
         return true;
     }
