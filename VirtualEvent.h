@@ -23,7 +23,6 @@ public:
     private:
         std::String streamLink;
         std::String audience;
-
 }
 
 #endif

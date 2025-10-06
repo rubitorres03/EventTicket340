@@ -33,7 +33,7 @@
 	bool operator==(const Event& otherEvent) const;
 
 	//Functions that Event should have
-	void discplay() const;
+	void display() const;
 	bool modify() const;
 	bool sell(int quantity) const;
 	};
