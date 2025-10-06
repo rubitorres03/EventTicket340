@@ -16,15 +16,14 @@ bool LinkedBag<ItemType>::reverseAppendK(const ItemType& newEntry, const int& k)
  	int kEntry = itemCount - k;
 
  	Node<ItemType>* nextNodePtr = new Node<ItemType>();
+	nextNodePtr->setItem(newEntry);
 
 	if(kEntry <=0){
 		// Add the element to the beginning if k is out of range
-		nextNodePtr->setItem(newEntry);
 		nextNodePtr->setNext(headPtr);  // New node points to chain
 		headPtr = nextNodePtr;			// New node is now first node
-		itemCount++;
-	
-		return true;
+		
+		
 
 	}else{
 		Node<ItemType>* curPtr = headPtr;
@@ -32,16 +31,18 @@ bool LinkedBag<ItemType>::reverseAppendK(const ItemType& newEntry, const int& k)
 			curPtr = curPtr->getNext();
 		}
 
-		nextNodePtr->setItem(newEntry); 	// store the new entry into a new node
-		LastCurPtr = curPtr->getNext(); 	// access the prev pointer
+		 	// store the new entry into a new node
+		Node<ItemType>* LastCurPtr = curPtr->getNext(); 	// access the prev pointer
 		curPtr->setNext(nextNodePtr); 		// point prev pointer to newEntry
 		nextNodePtr->setNext(LastCurPtr); 	// point newEntry  to pointer of prev pointer
-		itemCount++;
+		
 	
-		return true;
+		
 		
 		
 	}
+	itemCount++;
+	return true;
 }
 
 Node<ItemType>* findKthItem(const int& indexK) const{
