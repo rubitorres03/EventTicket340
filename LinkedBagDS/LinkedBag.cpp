@@ -42,7 +42,17 @@ bool LinkedBag<ItemType>::reverseAppendK(const ItemType& newEntry, const int& k)
 	return true;
 }
 
-Node<ItemType>* findKthItem(const int& indexK) const{
+template<class ItemType>
+Node<ItemType>* LinkedBag<ItemType>::findKthItem(const int& indexK) const{
+	
+
+	Node<ItemType>* currPtr = headPtr;
+		for(int i = 0; i < indexK; i++){
+			
+			currPtr = currPtr->getNext();
+		}
+
+		return currPtr;
 
 }
 // ------------------------------------------------------------------
