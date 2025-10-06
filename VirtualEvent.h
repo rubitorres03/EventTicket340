@@ -4,7 +4,7 @@
 #include "Event.h"
 
 #include <iostream>
-#include <String>
+#include <string>
 
 class VirtualEvent : public Event{
 public:
@@ -20,13 +20,12 @@ public:
     void setAudience(const std:: string& audience);
     std::string getAudience() const;
 
-    void setAccessCode(const std:: string& accessCode);
-    std::string getAccessCode() const;
+    bool sell(int quantity);
 
     private:
-        std::String streamLink;
-        std::String audience;
-        std::String accessCode;
+        std::string streamLink;
+        std::string audience;
+        std::string accessCode = "ZT4iWsVSdP";
 }
 
 #endif

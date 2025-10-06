@@ -3,9 +3,7 @@
 #include "VirtualEvent.h"
 #include "Event.h"
 
-//List<String>
 
-//class Base;
 VirtualEvent::VirtualEvent(){}
 
 VirtualEvent::VirtualEvent(const std::string& name, const std::string& description, int rating,
@@ -30,23 +28,20 @@ VirtualEvent::VirtualEvent(const std::string& name, const std::string& descripti
         return audience;
     }
 
-    void VirtualEvent::setAccessCode(const std::sring& accessCode){
+    /*void VirtualEvent::setAccessCode(const std::sring& accessCode){
         VirtualEvent::accessCode = accessCode;
     }
 
     std::string VirtualEvent::getAccessCode() const{
         return accessCode;
-    }
+    } */
 
      bool VirtualEvent::sell(int quantity) {
-        if(capacity >= quantity) {
-            capacity -= quantity;
-            setSoldTicketsCount(getSoldTicketsCount() + quantity);
-            return true;
-        } else {
-            std::cout << "Sold out!" <<std::endl;
-            return false;
+        for(int i = 0;i < quantity;i++) {
+            soldTicketsCount++;
+            std::cout << "Your access code is : " << accessCode << std::endl;
         }
+        return true;
     }
 
 
