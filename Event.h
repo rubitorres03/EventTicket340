@@ -34,8 +34,8 @@
 
 	//Functions that Event should have
 	void display() const;
-	bool modify() const;
-	bool sell(int quantity) const;
+	virtual bool modify() const;
+	virtual bool sell(int quantity) const;
 	};
 #endif
 

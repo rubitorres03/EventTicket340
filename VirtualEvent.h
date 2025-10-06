@@ -10,7 +10,7 @@ class VirtualEvent : public Event{
 public:
     VirtualEvent();
     VirtualEvent(const std::string& name, const std::string& description, const std::string& streamLink,
-         const std::string& audience);
+         const std::string& audience, const std::string& accessCode);
 
     ~VirtualEvent();
 
@@ -20,9 +20,13 @@ public:
     void setAudience(const std:: string& audience);
     std::string getAudience() const;
 
+    void setAccessCode(const std:: string& accessCode);
+    std::string getAccessCode() const;
+
     private:
         std::String streamLink;
         std::String audience;
+        std::String accessCode;
 }
 
 #endif

@@ -30,6 +30,14 @@ VirtualEvent::VirtualEvent(const std::string& name, const std::string& descripti
         return audience;
     }
 
+    void VirtualEvent::setAccessCode(const std::sring& accessCode){
+        VirtualEvent::accessCode = accessCode;
+    }
+
+    std::string VirtualEvent::getAccessCode() const{
+        return accessCode;
+    }
+
      bool VirtualEvent::sell(int quantity) {
         if(capacity >= quantity) {
             capacity -= quantity;
@@ -41,5 +49,4 @@ VirtualEvent::VirtualEvent(const std::string& name, const std::string& descripti
         }
     }
 
-    bool VirtualEvent::accessCode
 
