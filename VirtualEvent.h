@@ -7,14 +7,22 @@
 #include <String>
 
 class VirtualEvent : public Event{
-    protected:
-        std::String streamLink;
-        std::String audience;
-
 public:
     VirtualEvent();
-    VirtualEvent(const std::string& streamLink, const std::string& audience);
+    VirtualEvent(const std::string& name, const std::string& description, const std::string& streamLink,
+         const std::string& audience);
+
     ~VirtualEvent();
+
+    void setStreamLink(const std:: string& streamLink);
+    std::string getStreamLink() const;
+
+    void setAudience(const std:: string& audience);
+    std::string getAudience() const;
+
+    private:
+        std::String streamLink;
+        std::String audience;
 
 }
 

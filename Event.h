@@ -15,7 +15,7 @@
 
 	public:
 	Event();
-	Event(const std::string& name, const std::string& description);
+	Event(const std::string& name, const std::string& description,int rating,int soldTicketsCount);
 	virtual ~Event();
 
 	void setName(const std::string& name);
@@ -25,9 +25,6 @@
 	std::string getDescription() const;
 
 	// display(void),modify(bool), sell(quantity:int):bool
-	virtual void display() const;
-	virtual bool modify(bool changeAll);
-	virtual bool sell(int quantity);
 
 	// This is a function that allows you to compare two events based on their name.
 	// You may directly include it in your class definition.
