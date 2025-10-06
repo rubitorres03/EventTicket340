@@ -37,10 +37,17 @@ void displayOrganizerMenu(Organizer& organizer){
 			case 1:{
 				// TO DO: display organizer's profile information
 				//      : e.g. organizer.displayProfile();
+				organizerChoice.displayProfile();
 				break;
 			}
 			case 2: {
 				// TO DO: ask for new password and update organizer's password
+				// Ask user to input a new password -> string
+				string newPassword;
+				cout << "Please Enter new Password: ";
+				getline(cin,newPassword);
+				organizerChoice.setPassword(newPassword);
+				// organizer.setPassword(string)
 				break;
 			}
 			case 3: {
@@ -51,6 +58,7 @@ void displayOrganizerMenu(Organizer& organizer){
 			case 4:{
 				// TO DO: display all organizer's events
 				//        You may re-use code from class demo
+				// event.display()
 				break;
 			}
 			case 5: {

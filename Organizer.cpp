@@ -65,6 +65,13 @@ std::string Organizer::getProfielPic() const{
    return Organizer::profilePic;
 }
 
+void Organizer::displayProfile() const {
+   std::cout << "User name: " << username << std::endl;
+   std::cout << "Email:  " << email << std::endl;
+   std::cout << " Bio: " << bio << std::endl;
+   std::cout << " Profile Picture:  " << profilePic << std::endl;
+}
+
 
 
 

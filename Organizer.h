@@ -42,7 +42,7 @@
          void setProfilePic(const std::string& profilePic);
          std::string getProfilePic() const;
 
-
+         void displayProfile() const;
 
 
 
