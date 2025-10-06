@@ -3,7 +3,6 @@
 // TO DO: #include all the standard libraries and your own libraries here
     #include "VirtualEvent.h"
     #include "VenueEvent.h"
-
 	#include <iostream>
 	#include <string>
 // To DO: define the class Event with the necessary functions' prototypes and data fields
@@ -13,7 +12,7 @@
 	std::string description;
 	int rating;
 	int soldTicketsCount;
-// display(void),modify(bool), sell(quantity:int):bool
+
 	public:
 	Event();
 	Event(const std::string& name, const std::string& description);
@@ -24,6 +23,11 @@
 
 	void setDescription(const std::string& description);
 	std::string getDescription() const;
+
+	// display(void),modify(bool), sell(quantity:int):bool
+	virtual void display() const;
+	virtual bool modify(bool changeAll);
+	virtual bool sell(int quantity);
 
 	// This is a function that allows you to compare two events based on their name.
 	// You may directly include it in your class definition.

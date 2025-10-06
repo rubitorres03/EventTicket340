@@ -17,3 +17,5 @@ public:
     ~VirtualEvent();
 
 }
+
+#endif
