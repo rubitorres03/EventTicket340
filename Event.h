@@ -1,6 +1,9 @@
 #ifndef EVENT_H
 #define EVENT_H
 // TO DO: #include all the standard libraries and your own libraries here
+    #include "VirtualEvent.h"
+    #include "VenueEvent.h"
+
 	#include <iostream>
 	#include <string>
 // To DO: define the class Event with the necessary functions' prototypes and data fields
@@ -10,7 +13,7 @@
 	std::string description;
 	int rating;
 	int soldTicketsCount;
-
+// display(void),modify(bool), sell(quantity:int):bool
 	public:
 	Event();
 	Event(const std::string& name, const std::string& description);

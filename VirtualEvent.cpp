@@ -3,3 +3,5 @@
 #include "VirtualEvent.h"
 
 List<String>
+
+class Base;
