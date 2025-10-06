@@ -36,6 +36,9 @@ bool LinkedBag<ItemType>::reverseAppendK(const ItemType& newEntry, const int& k)
 		LastCurPtr = curPtr->getNext(); 	// access the prev pointer
 		curPtr->setNext(nextNodePtr); 		// point prev pointer to newEntry
 		nextNodePtr->setNext(LastCurPtr); 	// point newEntry  to pointer of prev pointer
+		itemCount++;
+	
+		return true;
 		
 		
 	}
