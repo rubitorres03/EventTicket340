@@ -11,7 +11,39 @@
 
 // Assignment 2 functions -------------------------------------------
 // TO DO: implement the two functions here
+template<class ItemType>
+bool LinkedBag<ItemType>::reverseAppendK(const ItemType& newEntry, const int& k){
+ 	int kEntry = itemCount - k;
 
+ 	Node<ItemType>* nextNodePtr = new Node<ItemType>();
+
+	if(kEntry <=0){
+		// Add the element to the beginning if k is out of range
+		nextNodePtr->setItem(newEntry);
+		nextNodePtr->setNext(headPtr);  // New node points to chain
+		headPtr = nextNodePtr;			// New node is now first node
+		itemCount++;
+	
+		return true;
+
+	}else{
+		Node<ItemType>* curPtr = headPtr;
+		for(int i = 0; i < kEntry; i++){
+			curPtr = curPtr->getNext();
+		}
+
+		nextNodePtr->setItem(newEntry); 	// store the new entry into a new node
+		LastCurPtr = curPtr->getNext(); 	// access the prev pointer
+		curPtr->setNext(nextNodePtr); 		// point prev pointer to newEntry
+		nextNodePtr->setNext(LastCurPtr); 	// point newEntry  to pointer of prev pointer
+		
+		
+	}
+}
+
+Node<ItemType>* findKthItem(const int& indexK) const{
+
+}
 // ------------------------------------------------------------------
 
 template<class ItemType>
