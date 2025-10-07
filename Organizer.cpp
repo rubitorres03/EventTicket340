@@ -2,6 +2,7 @@
    #include <iostream>
    #include <string>
    #include <Organizer.h>
+   #include <vector>
 
 
 Organizer::Organizer(){}
@@ -72,13 +73,12 @@ void Organizer::displayProfile() const {
    std::cout << " Profile Picture:  " << profilePic << std::endl;
 }
 
-///need to fix
+
 bool Organizer::modifyPassword(const std::string& password){
-   if(!password.empty()){
-      password = newPassword;
+   
+      password = password;
       return true;
-   }
-   return false;
+   
 }
 bool Organizer::createEvent(Event* event){
    if(event != nullptr){

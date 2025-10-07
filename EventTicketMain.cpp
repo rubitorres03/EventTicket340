@@ -3,10 +3,8 @@
 
 // TO DO: #include any other libraries you need
 #include "EventTicket340.h"
-#include "LinkedBag.h"
-
-//name
-//name
+#include "VirtualEvent.h"
+#include "VenueEvent.h"
 
 using namespace std;
 
@@ -140,9 +138,9 @@ void displayOrganizerMenu(Organizer& organizer){
 				int k;
 				cout <<"Enter what Kth element you want to view: ";
 				cin >> k;
-				
-				if(k > organizer.organizerEvents.getCurrentSize){
-					cout << "Error Out of Range. Size of LinkedBag" << organizer.organizerEvents.getCurrentSize;
+				int size = organizer.organizerEvents.getCurrentSize();
+				if(k > size){
+					cout << "Error Out of Range. Size of LinkedBag" << size << endl;
 				}else{
 					organizer.displayEvent(k);
 				}
@@ -160,8 +158,10 @@ void displayOrganizerMenu(Organizer& organizer){
 				cout <<"Enter what Kth element you want to modify: ";
 				cin >> k;
 
-				if(k > organizer.organizerEvents.getCurrentSize){
-					cout << "Error Out of Range. Size of LinkedBag" << organizer.organizerEvents.getCurrentSize;
+				int size = organizer.organizerEvents.getCurrentSize();
+
+				if(k > size){
+					cout << "Error Out of Range. Size of LinkedBag" << size << endl;
 				}else{
 					organizer.modifyEvent(k);
 				}
@@ -180,8 +180,9 @@ void displayOrganizerMenu(Organizer& organizer){
 				cout << "Enter ticket quantity";
 				cin >> quantity;
 
-				if(k > organizer.organizerEvents.getCurrentSize){
-					cout << "Error Out of Range. Size of LinkedBag" << organizer.organizerEvents.getCurrentSize;
+				int size = organizer.organizerEvents.getCurrentSize();
+				if(k > size){
+					cout << "Error Out of Range. Size of LinkedBag" << size << endl;
 				}else{
 					organizer.sellTicket(k,quantity);
 				}
@@ -196,9 +197,9 @@ void displayOrganizerMenu(Organizer& organizer){
 				int k;
 				cout <<"Enter what Kth element you want to delete: ";
 				cin >> k;
-				
-				if(k > organizerEvents.getCurrentSize){
-					cout << "Error Out of Range. Size of LinkedBag" << organizerEvents.getCurrentSize;
+				int size = organizer.organizerEvents.getCurrentSize();
+				if(k > size){
+					cout << "Error Out of Range. Size of LinkedBag" << size << endl;
 				}else{
 					organizer.deleteEvent(k);
 				}
