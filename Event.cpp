@@ -78,7 +78,7 @@
       }
    }
 
-   }
+   
    // ------------------------------------------------------------------------------
    // Operator overloading implementation
    bool Event::operator==(const Event& otherEvent) const {
