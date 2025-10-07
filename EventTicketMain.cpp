@@ -5,6 +5,7 @@
 #include "EventTicket340.h"
 #include "VirtualEvent.h"
 #include "VenueEvent.h"
+#include "Organizer.h"
 
 using namespace std;
 
@@ -120,7 +121,7 @@ void displayOrganizerMenu(Organizer& organizer){
 					event = new VenueEvent(name,description,rating,soldTicketsCount,venue,dateTime,capacity);
 					
 				}
-				organizer.create(event);
+				organizer.createEvent(event);
 				// Create the event and add it to the organizer's events
 				break;
 			}
@@ -142,7 +143,7 @@ void displayOrganizerMenu(Organizer& organizer){
 				if(k > size){
 					cout << "Error Out of Range. Size of LinkedBag" << size << endl;
 				}else{
-					organizer.displayEvent(k);
+					organizer.displayEventK(k);
 				}
 
 				
