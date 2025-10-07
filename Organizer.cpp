@@ -72,12 +72,66 @@ void Organizer::displayProfile() const {
    std::cout << " Profile Picture:  " << profilePic << std::endl;
 }
 
+///need to fix
+bool Organizer::modifyPassword(const std::string& password){
+   if(!password.empty()){
+      password = newPassword;
+      return true;
+   }
+   return false;
+}
+bool Organizer::createEvent(Event* event){
+   if(event != nullptr){
+      return organizerEvents.add(event);
+   }
+   return false;
+   
+}
+void Organizer::displayEventK(int k) const{
+   Node<Event*>* node = organizerEvents.findKthItem(k-1);
+   if(node && node->getItem() != nullptr){
+      node->getItem()->display();
+   }
 
+}
 
+void Organizer::displayAllEvents(){
+   vector<Event*> bagItems = organizerEvents.toVector();
+   int numberOfEntries = bagItems.size();
+   for(int i = 0; i < numberOfEntries;i++){
+      bagItems[i]->display();
+   }
+   
+}
+bool Organizer::modifyEvent(int k){
+   Node<Event*>* node = organizerEvents.findKthItem(k-1);
+   if(node && node->getItem() != nullptr){
+      return node->getItem()->modify();
 
+   }
+   return false;
 
+}
+bool Organizer::sellTicket(int k, int quantity){
+   Node<Event*>* node = organizerEvents.findKthItem(k-1);
+   if(node && node->getItem() != nullptr){
+      return node->getItem()->sell(quantity);
 
+   }
+   return false;
 
+}
+bool Organizer::deleteEvent(int k){
+   Node<Event*>* node = organizerEvents.findKthItem(k-1);
+   if(node && node->getItem() != nullprt){
+      Event* ev = node->getItem();
+      organizerEvents.remove(ev);
+      return true;
+
+   }
+   return false;
+
+}
 
 // Operator == overloading implementation
 bool Organizer::operator==(const Organizer& otherOrganizer) const {

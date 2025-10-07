@@ -16,6 +16,8 @@
       std::string bio;
       std::string profilePic;
 
+      LinkedBag<Event*> organizerEvents;
+
 
       public:
          Organizer();
@@ -43,6 +45,14 @@
          std::string getProfilePic() const;
 
          void displayProfile() const;
+
+         bool modifyPassword(const std::string& password);
+         bool createEvent(Event* event);
+         void displayEventK(int k) const;
+         void displayAllEvents();
+         bool modifyEvent(int k);
+         bool sellTicket(int k, int quantity);
+         bool deleteEvent(int k);
 
 
 

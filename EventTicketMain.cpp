@@ -20,7 +20,7 @@ using namespace std;
 void displayOrganizerMenu(Organizer& organizer){
 	int organizerChoice = 0;
 	do {
-		LinkedBag<Event*> organizerEvents;
+		
 		cout << "\n Hi, "<< organizer.getUsername() <<", what would you like to do:\n"
 		<< "1. Display Profile\n"
 		<< "2. Modify Password\n"
@@ -47,91 +47,89 @@ void displayOrganizerMenu(Organizer& organizer){
 				string newPassword;
 				cout << "Please Enter new Password: ";
 				getline(cin,newPassword);
-				organizer.setPassword(newPassword);
-				// organizer.setPassword(string)
+				organizer.modifyPassword(newPassword);
+				
 				break;
 			}
 			case 3: {
 				// TO DO: ask organizer to choose event type, then ask them to input event details.
-				std::string choice;
+				string choice;
 				Event* event = nullptr;
 				
 				cout << "Which event type are you making (virtual or venue):  ";
 				getline(cin,choice);
 				if(choice == "virtual"){
 				// 	create a Virtual event object
-					std::string name;
-					std::string description;
+					string name;
+					string description;
 					int rating;
-					std::string ratingStr;
 					int soldTicketsCount;
-					std::string ticketsStr;
-					std::string streamLink;
-					std::string audience;
+					
+					string streamLink;
+					string audience;
 
-					std::cout<< "Enter name of Event:";
-					std::getline(std::cin,name);
+					cout<< "Enter name of Event:";
+					getline(cin,name);
 
 					cout<< "Enter description: ";
-					std::getline(std::cin,description);
+					getline(cin,description);
 
-					std::cout<< "Enter rating:";
-					std::getline(std::sin,ratingStr);
-					rating = std::stoi(ratingStr);
+					cout<< "Enter rating:";
+					cin >> rating;
 
-					std::cout<< "Enter number of sold Tickets: ";
-					std::getline(std::sin,ticketsStr);
-					soldTicketsCount = std::stoi(ticketsStr);
+					cout<< "Enter number of sold Tickets: ";
+					cin >> soldTicketsCount;
 
-					std::cout<< "Enter Stream Link: ";
-					std::getline(std::cin,streamLink);
+					cout<< "Enter Stream Link: ";
+					getline(cin,streamLink);
 
-					std::cout<< "Enter audience type:  ";
-					std::getline(std::cin, audience);
+					cout<< "Enter audience type:  ";
+					getline(cin, audience);
 
 					event = new VirtualEvent(name,description,rating,soldTicketsCount,streamLink,audience);
 					
 				}else if(choice == "venue"){
 				// 	create a Venue even object
-					std::string name;
-					std::string description;
+					string name;
+					string description;
 					int rating;
 					int soldTicketsCount;
-					std::string venue;
-					std::string dateTime;
+					string dateTime;
 					int capacity;
+					
 
-					std::cout<< "Enter name of Event:";
-					std::cin >> name;
+					cout<< "Enter name of Event:";
+					getline(cin >> name);
 
 					cout<< "Enter description: ";
-					std::getline(std::cin,description);
+					getline(cin,description);
 
-					std::cout<< "Enter rating:";
-					std::cin >> rating;
+					cout<< "Enter rating:";
+					cin >> rating;
 
-					std::cout<< "Enter number of sold Tickets: ";
-					std::cin >> soldTicketsCount;
+					cout<< "Enter number of sold Tickets: ";
+					cin >> soldTicketsCount;
 
 					cout<< "Enter venue name: ";
-					std::cin >> venue;
+					getline(cin,venue);
 
 					cout<< "Enter date and Time: ";
-					std::getline(std::cin,dateTime);
+					getline(cin,dateTime);
 
-					std::cout<<"Enter capacity for event: ";
-					std::cin >> capacity;
+					cout<<"Enter capacity for event: ";
+					cin >> capacity;
 				
 					event = new VenueEvent(name,description,rating,soldTicketsCount,venue,dateTime,capacity);
 					
 				}
-				organizerEvents.add(event);
+				organizer.create(event);
 				// Create the event and add it to the organizer's events
 				break;
 			}
 			case 4:{
 				// TO DO: display all organizer's events
 				//        You may re-use code from class demo
+				organizer.displayAllEvents();
 				
 				break;
 			}
@@ -139,6 +137,17 @@ void displayOrganizerMenu(Organizer& organizer){
 				// TO DO: ask the organizer for a value k
 				// Find the Kth event, if k > LinkedBag size, 
 				//    return an error message that includes the size of the LinkedBag
+				int k;
+				cout <<"Enter what Kth element you want to view: ";
+				cin >> k;
+				
+				if(k > organizer.organizerEvents.getCurrentSize){
+					cout << "Error Out of Range. Size of LinkedBag" << organizer.organizerEvents.getCurrentSize;
+				}else{
+					organizer.displayEvent(k);
+				}
+
+				
 				break;
 			}
 			case 6: {
@@ -147,6 +156,16 @@ void displayOrganizerMenu(Organizer& organizer){
 				// Modify the event accordingly. 
 				// If index > LinkedBag size, 
 				//    return an error message that includes the size of the LinkedBag
+				int k;
+				cout <<"Enter what Kth element you want to modify: ";
+				cin >> k;
+
+				if(k > organizer.organizerEvents.getCurrentSize){
+					cout << "Error Out of Range. Size of LinkedBag" << organizer.organizerEvents.getCurrentSize;
+				}else{
+					organizer.modifyEvent(k);
+				}
+				
 				break;
 			}
 			case 7: {
@@ -154,6 +173,19 @@ void displayOrganizerMenu(Organizer& organizer){
 				// Find the event, then sell the tickets. 
 				// If index > LinkedBag size, 
 				//    return an error message that includes the size of the LinkedBag
+				int k;
+				int quantity;
+				cout << "Enter the event index to sell tickets: ";
+				cin >> k;
+				cout << "Enter ticket quantity";
+				cin >> quantity;
+
+				if(k > organizer.organizerEvents.getCurrentSize){
+					cout << "Error Out of Range. Size of LinkedBag" << organizer.organizerEvents.getCurrentSize;
+				}else{
+					organizer.sellTicket(k,quantity);
+				}
+				
 				break;
 			}
 			case 8:{
@@ -161,6 +193,17 @@ void displayOrganizerMenu(Organizer& organizer){
 				// Find the event, then remove it from the list. 
 				// If index > LinkedBag size, 
 				//    return an error message that includes the size of the LinkedBag
+				int k;
+				cout <<"Enter what Kth element you want to delete: ";
+				cin >> k;
+				
+				if(k > organizerEvents.getCurrentSize){
+					cout << "Error Out of Range. Size of LinkedBag" << organizerEvents.getCurrentSize;
+				}else{
+					organizer.deleteEvent(k);
+				}
+
+
 				break;
 			}
 			case 0: {
@@ -183,26 +226,26 @@ int main(){
 	cout << "\n Welcome to EventTicket340:" << endl;
 	// TO DO: Ask the organizer to enter their information 
 	//        Instantiate a new Organizer object
-	std::string username;
-	std::string email;
-	std::string password;
-	std::string bio;
-	std::string profilePicture;
+	string username;
+	string email;
+	string password;
+	string bio;
+	string profilePicture;
 
-	std::cout << "Please enter a username: ";
-	std::cin >> username;
+	cout << "Please enter a username: ";
+	getline(cin,username);
 
-	std::cout << "Please enter an email: ";
-	std::getline(std::cin,email);
+	cout << "Please enter an email: ";
+	getline(cin,email);
 
-	std::cout << "Please enter a password ";
-	std::cin >> password;
+	cout << "Please enter a password ";
+	getline(cin,password);
 
-	std::cout << "Please enter a bio: ";
-	atd::getline(std::cin,bio);
+	cout << "Please enter a bio: ";
+	getline(cin,bio);
 
-	std::cout << "Please enter a profile picture ";
-	std::cin >> profilePicture;
+	cout << "Please enter a profile picture ";
+	getline(cin,profilePicture);
 
 	// call eventTicket340 createOrganizer function 
 	// replace /*...*/ with the right parameters
