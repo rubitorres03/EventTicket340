@@ -10,7 +10,7 @@ VirtualEvent::VirtualEvent(const std::string& name, const std::string& descripti
     int soldTicketsCount, const std::string& streamLink, const std::string& audience): Event (name,description,
     rating,soldTicketsCount),streamLink(streamLink),audience(audience){}
 
-    VirtualEvent::~VirtualEvent{}
+    VirtualEvent::~VirtualEvent(){}
 
     void VirtualEvent::setStreamLink(const std::string& streamLink) {
         VirtualEvent::streamLink = streamLink;

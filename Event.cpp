@@ -7,10 +7,10 @@
    #include "VenueEvent.h"
 // TO DO: function implementations
 
-   Event::Event(){
+   Event::Event(){}
 
 
-   Event::Event(const std::string& name, const std::string& description):
+   Event::Event(const std::string& name, const std::string& description,int rating, int soldTicketsCount):
    name(name),description(description),rating(rating),soldTicketsCount(soldTicketsCount){
    }
    Event::~Event(){
