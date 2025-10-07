@@ -20,9 +20,9 @@ public:
     void setDateTime(const std:: string& dateTime);
     std::string getDateTime() const;
 
-    void setCapacity(int capacity){
-        int getCapacity() const;
-    }
+    void setCapacity(int capacity);
+    int getCapacity() const;
+    
 
     bool sell(int quantity);
 
