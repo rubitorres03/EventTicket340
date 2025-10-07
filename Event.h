@@ -16,7 +16,7 @@
 
 	public:
 	Event();
-	Event(const std::string& name, const std::string& description,int rating,int soldTicketsCount);
+	Event(const std::string& name, const std::string& description, int rating, int soldTicketsCount);
 	virtual ~Event();
 
 	void setName(const std::string& name);
