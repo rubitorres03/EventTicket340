@@ -7,12 +7,12 @@
    #include "VenueEvent.h"
 // TO DO: function implementations
 
-   Event::Event(){}
+   Event::Event() : name(""), description(""), rating(0), soldTicketsCount(0){}
 
 
-   Event::Event(const std::string& name, const std::string& description,int rating, int soldTicketsCount):
-   name(name),description(description),rating(rating),soldTicketsCount(soldTicketsCount){
-   }
+   Event::Event(const std::string& name, const std::string& description, int rating, int soldTicketsCount) :
+   name(name), description(description),rating(rating),soldTicketsCount(soldTicketsCount){}
+   
    Event::~Event(){
       std::cout << "Event: " << Event::name <<std::endl;
    }

@@ -28,14 +28,6 @@ VirtualEvent::VirtualEvent(const std::string& name, const std::string& descripti
         return audience;
     }
 
-    /*void VirtualEvent::setAccessCode(const std::sring& accessCode){
-        VirtualEvent::accessCode = accessCode;
-    }
-
-    std::string VirtualEvent::getAccessCode() const{
-        return accessCode;
-    } */
-
      bool VirtualEvent::sell(int quantity) {
         for(int i = 0;i < quantity;i++) {
             soldTicketsCount++;

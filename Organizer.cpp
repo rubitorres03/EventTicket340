@@ -1,7 +1,7 @@
 // TO DO: #include needed standard libraries and your own libraries here
    #include <iostream>
    #include <string>
-   #include <Organizer.h>
+   #include "Organizer.h"
    #include <vector>
 
 
@@ -62,7 +62,7 @@ void Organizer::setProfilePic(const std::string& profilePic){
 }
 
 
-std::string Organizer::getProfielPic() const{
+std::string Organizer::getProfilePic() const{
    return Organizer::profilePic;
 }
 
