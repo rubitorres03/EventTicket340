@@ -9,7 +9,7 @@ VenueEvent::VenueEvent(const std::string& name, const std::string& description, 
         rating, soldTicketsCount),venue(venue),dateTime(dateTime),capacity(capacity){
 }
 
-VenueEvent::~VenueEvent{}
+VenueEvent::~VenueEvent(){}
 
 void VenueEvent::setVenue(const std::string& venue) {
     VenueEvent::venue = venue;
