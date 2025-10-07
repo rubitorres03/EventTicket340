@@ -4,16 +4,18 @@
 #include "Event.h"
 
 
-VirtualEvent::VirtualEvent(){}
+VirtualEvent::VirtualEvent() : Event(), streamLink(""), audience("") {}
 
 VirtualEvent::VirtualEvent(const std::string& name, const std::string& description, int rating,
-    int soldTicketsCount, const std::string& streamLink, const std::string& audience): Event (name,description,
-    rating,soldTicketsCount),streamLink(streamLink),audience(audience){}
+    int soldTicketsCount, const std::string& streamLink, const std::string& audience): Event (name, description,
+    rating, soldTicketsCount), streamLink(streamLink), audience(audience){}
 
-    VirtualEvent::~VirtualEvent(){}
+    VirtualEvent::~VirtualEvent(){
+        std::cout << "Virtual Event deconstructor: " << name << std::endl;
+    }
 
     void VirtualEvent::setStreamLink(const std::string& streamLink) {
-        VirtualEvent::streamLink = streamLink;
+        this -> streamLink = streamLink;
     }
 
     std::string VirtualEvent::getStreamLink() const{
@@ -21,7 +23,7 @@ VirtualEvent::VirtualEvent(const std::string& name, const std::string& descripti
     }
 
     void VirtualEvent::setAudience(const std::string& audience) {
-        VirtualEvent::audience = audience;
+        this -> audience = audience;
     }
 
     std::string VirtualEvent::getAudience() const{

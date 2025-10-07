@@ -3,39 +3,37 @@
    #include <iostream>
    #include <string>
    #include "Event.h"
-   #include "VirtualEvent.h"
-   #include "VenueEvent.h"
 // TO DO: function implementations
 
    Event::Event() : name(""), description(""), rating(0), soldTicketsCount(0){}
 
 
    Event::Event(const std::string& name, const std::string& description, int rating, int soldTicketsCount) :
-   name(name), description(description),rating(rating),soldTicketsCount(soldTicketsCount){}
-   
+   name(name), description(description),rating(rating), soldTicketsCount(soldTicketsCount){}
+
    Event::~Event(){
-      std::cout << "Event: " << Event::name <<std::endl;
+      std::cout << "Event: " << name <<std::endl;
    }
    
-   void setName(const std::string& name){
-      Event::name = name;
+   void Event::setName(const std::string& name){
+      this->name = name;
    }
 
    std::string getName() const{
-      return Event::name;
+      return name;
    }
 
-   void setDescription(const std::string& description){
-      Event::description = description;
+   void Event::setDescription(const std::string& description){
+      this->description = description;
    }
 
 
    std::string getDescription() const{
-      return Event::description;
+      return description;
    }
 
    void Event::setRating(int rating) {
-      Event::rating = rating;
+      this->rating = rating;
    }
 
    int Event:: getRating() const {
@@ -53,25 +51,25 @@
       std::cout << "Tickets sold: " << soldTicketsCount << std::endl;
    }
 
-   void Event::modify(bool changeAll){
+   bool Event::modify(){
       std::string newValue;
       std::cout << "Modify event: " << name << std::endl;
       std::cout << "Enter new event name: ";
       std::getline(std::cin, newValue);
       if (!newValue.empty()) setName(newValue);
-   }
-
-   if(changeAll) {
+   
       std::cout << "Enter new description: ";
       std::getline(std::cin, newValue);
       if (!newValue.empty()) setDescription(newValue); 
-   }
 
    std::cout << "Enter new rating: ";
    std::getline(std::cin, newValue);
    if(!newValue.empty()) setRating(newValue);
 
-   bool Event:: sell(int quantity) {
+   return true;
+   }
+
+   bool Event::sell(int quantity) {
       if(quantity <= 0 ){
          return false;
       } else {

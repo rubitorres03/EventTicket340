@@ -9,8 +9,8 @@
 class VirtualEvent : public Event{
 public:
     VirtualEvent();
-    VirtualEvent(const std::string& name, const std::string& description, const std::string& streamLink,
-         const std::string& audience, const std::string& accessCode);
+    VirtualEvent(const std::string& name, const std::string& description, int rating, int soldTicketsCount,
+         const std::string& streamLink, const std::string& audience);
 
     ~VirtualEvent();
 
@@ -20,7 +20,7 @@ public:
     void setAudience(const std:: string& audience);
     std::string getAudience() const;
 
-    bool sell(int quantity);
+    bool sell(int quantity) override;
 
     private:
         std::string streamLink;
