@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include "EventTicket340.h"
+#include "Organizer.h"
 
 
 // TO DO: implement constructor
