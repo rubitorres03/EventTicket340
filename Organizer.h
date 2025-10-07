@@ -46,6 +46,8 @@
          void setProfilePic(const std::string& profilePic);
          std::string getProfilePic() const;
 
+         int getNumberOfEvents() const;
+         
          void displayProfile() const;
 
          bool modifyPassword(const std::string& password);

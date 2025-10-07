@@ -66,6 +66,10 @@ std::string Organizer::getProfielPic() const{
    return Organizer::profilePic;
 }
 
+int getNumberOfEvents() const {
+   return organizerEvents.getCurrentSize();
+}
+
 void Organizer::displayProfile() const {
    std::cout << "User name: " << username << std::endl;
    std::cout << "Email:  " << email << std::endl;

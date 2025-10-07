@@ -1,3 +1,6 @@
+#ifndef EVENTTICKET340_H
+#define EVENTTICKET340_H
+
 #include "LinkedBagDS/LinkedBag.h"
 #include "Organizer.h"
 // TO DO include necessary libraries
@@ -19,3 +22,5 @@ class EventTicket340 {
 		// Retrieve the organizer object
 		Organizer getOrganizer() const;
 };
+
+#endif // EVENTTICKET340_H

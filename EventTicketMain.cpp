@@ -93,12 +93,13 @@ void displayOrganizerMenu(Organizer& organizer){
 					string description;
 					int rating;
 					int soldTicketsCount;
+					string venue;
 					string dateTime;
 					int capacity;
 					
 
 					cout<< "Enter name of Event:";
-					getline(cin >> name);
+					getline(cin, name);
 
 					cout<< "Enter description: ";
 					getline(cin,description);
@@ -139,7 +140,7 @@ void displayOrganizerMenu(Organizer& organizer){
 				int k;
 				cout <<"Enter what Kth element you want to view: ";
 				cin >> k;
-				int size = organizer.organizerEvents.getCurrentSize();
+				int size = organizer.getNumberOfEvents();
 				if(k > size){
 					cout << "Error Out of Range. Size of LinkedBag" << size << endl;
 				}else{
@@ -159,7 +160,7 @@ void displayOrganizerMenu(Organizer& organizer){
 				cout <<"Enter what Kth element you want to modify: ";
 				cin >> k;
 
-				int size = organizer.organizerEvents.getCurrentSize();
+				int size = organizer.getNumberOfEvents();
 
 				if(k > size){
 					cout << "Error Out of Range. Size of LinkedBag" << size << endl;
@@ -181,7 +182,7 @@ void displayOrganizerMenu(Organizer& organizer){
 				cout << "Enter ticket quantity";
 				cin >> quantity;
 
-				int size = organizer.organizerEvents.getCurrentSize();
+				int size = organizer.getNumberOfEvents();
 				if(k > size){
 					cout << "Error Out of Range. Size of LinkedBag" << size << endl;
 				}else{
@@ -198,7 +199,7 @@ void displayOrganizerMenu(Organizer& organizer){
 				int k;
 				cout <<"Enter what Kth element you want to delete: ";
 				cin >> k;
-				int size = organizer.organizerEvents.getCurrentSize();
+				int size = organizer.getNumberOfEvents();
 				if(k > size){
 					cout << "Error Out of Range. Size of LinkedBag" << size << endl;
 				}else{
