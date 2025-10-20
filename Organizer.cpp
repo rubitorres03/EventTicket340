@@ -42,7 +42,7 @@ void Organizer::setPassword(const std::string& password){
 }
 
 
-std::stirng Organizer::getPassword() const{
+std::string Organizer::getPassword() const{
    return Organizer::password;
 }
 
