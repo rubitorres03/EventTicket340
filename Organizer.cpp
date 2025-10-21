@@ -101,7 +101,7 @@ void Organizer::displayEventK(int k) const{
 }
 
 void Organizer::displayAllEvents(){
-   vector<Event*> bagItems = organizerEvents.toVector();
+   std::vector<Event*> bagItems = organizerEvents.toVector();
    int numberOfEntries = bagItems.size();
    for(int i = 0; i < numberOfEntries;i++){
       bagItems[i]->display();
