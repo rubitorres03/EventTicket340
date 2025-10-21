@@ -19,7 +19,7 @@
       this->name = name;
    }
 
-   std::string getName() const{
+   std::string Event::getName() const{
       return this->name;
    }
 
@@ -28,7 +28,7 @@
    }
 
 
-   std::string getDescription() const{
+   std::string Event::getDescription() const{
       return this->description;
    }
 
@@ -36,11 +36,11 @@
       this->rating = rating;
    }
 
-   int Event:: getRating() const {
+   int Event::getRating() const {
       return this->rating;
    }
 
-   int Event:: getSoldTicketsCount() const{
+   int Event::getSoldTicketsCount() const{
       return this->soldTicketsCount;
    }
 

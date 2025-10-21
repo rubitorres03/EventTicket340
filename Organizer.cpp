@@ -66,8 +66,8 @@ std::string Organizer::getProfilePic() const{
    return Organizer::profilePic;
 }
 
-int getNumberOfEvents() const {
-   return organizerEvents.getCurrentSize();
+int Organizer::getNumberOfEvents() const {
+   return this->organizerEvents.getCurrentSize();
 }
 
 void Organizer::displayProfile() const {
@@ -80,7 +80,8 @@ void Organizer::displayProfile() const {
 
 bool Organizer::modifyPassword(const std::string& password){
    
-      password = password;
+
+      setPassword(password);
       return true;
    
 }
@@ -127,7 +128,7 @@ bool Organizer::sellTicket(int k, int quantity){
 }
 bool Organizer::deleteEvent(int k){
    Node<Event*>* node = organizerEvents.findKthItem(k-1);
-   if(node && node->getItem() != nullprt){
+   if(node && node->getItem() != nullptr){
       Event* ev = node->getItem();
       organizerEvents.remove(ev);
       return true;
