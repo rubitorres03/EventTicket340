@@ -53,6 +53,8 @@
 
    bool Event::modify(){
       std::string newValue;
+      int newRating;
+      
       std::cout << "Modify event: " << name << std::endl;
       std::cout << "Enter new event name: ";
       std::getline(std::cin, newValue);
@@ -62,11 +64,11 @@
       std::getline(std::cin, newValue);
       if (!newValue.empty()) setDescription(newValue); 
 
-   std::cout << "Enter new rating: ";
-   std::getline(std::cin, newValue);
-   if(!newValue.empty()) setRating(newValue);
+      std::cout << "Enter new rating: ";
+      std::cin >> newRating;
+      if(!newValue.empty()) setRating(newRating);
 
-   return true;
+      return true;
    }
 
    bool Event::sell(int quantity) {
