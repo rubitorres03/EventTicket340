@@ -55,7 +55,8 @@ void displayOrganizerMenu(Organizer& organizer){
 				// TO DO: ask organizer to choose event type, then ask them to input event details.
 				string choice;
 				Event* event = nullptr;
-				
+
+				cin.ignore();
 				cout << "Which event type are you making (virtual or venue):  ";
 				getline(cin,choice);
 				if(choice == "virtual"){
@@ -138,6 +139,7 @@ void displayOrganizerMenu(Organizer& organizer){
 				// TO DO: ask the organizer for a value k
 				// Find the Kth event, if k > LinkedBag size, 
 				//    return an error message that includes the size of the LinkedBag
+				cin.ignore();
 				int k;
 				cout <<"Enter what Kth element you want to view: ";
 				cin >> k;
@@ -157,6 +159,7 @@ void displayOrganizerMenu(Organizer& organizer){
 				// Modify the event accordingly. 
 				// If index > LinkedBag size, 
 				//    return an error message that includes the size of the LinkedBag
+				cin.ignore();
 				int k;
 				cout <<"Enter what Kth element you want to modify: ";
 				cin >> k;
@@ -176,6 +179,7 @@ void displayOrganizerMenu(Organizer& organizer){
 				// Find the event, then sell the tickets. 
 				// If index > LinkedBag size, 
 				//    return an error message that includes the size of the LinkedBag
+				cin.ignore();
 				int k;
 				int quantity;
 				cout << "Enter the event index to sell tickets: ";
@@ -197,6 +201,7 @@ void displayOrganizerMenu(Organizer& organizer){
 				// Find the event, then remove it from the list. 
 				// If index > LinkedBag size, 
 				//    return an error message that includes the size of the LinkedBag
+				cin.ignore();
 				int k;
 				cout <<"Enter what Kth element you want to delete: ";
 				cin >> k;
@@ -211,10 +216,12 @@ void displayOrganizerMenu(Organizer& organizer){
 				break;
 			}
 			case 0: {
+				cin.ignore();
 				cout << "Logging you out." << endl;
 				break;
 			}
 			default:
+				cin.ignore();
 				cout << "Invalid choice. Please try again." << endl;
 		}
 
