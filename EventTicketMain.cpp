@@ -151,6 +151,7 @@ void displayOrganizerMenu(Organizer& organizer){
 				if(k > size){
 					cout << "Error Out of Range. Size of LinkedBag" << size << endl;
 				}else{
+					cin.ignore();
 					organizer.displayEventK(k);
 				}
 
