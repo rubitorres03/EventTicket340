@@ -44,6 +44,10 @@
       return this->soldTicketsCount;
    }
 
+   void Event::setSoldTicketsCount(int count){
+      this->soldTicketsCount = count;
+   }
+
    void Event::display() const {
       std::cout << "Event name: " << name << std::endl;
       std::cout << "Description: " << description << std::endl;
