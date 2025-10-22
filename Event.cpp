@@ -59,6 +59,7 @@
       std::string newValue;
       int newRating;
       
+      cin.ignore();
       std::cout << "Modify event: " << name << std::endl;
       std::cout << "Enter new event name: ";
       std::getline(std::cin, newValue);
