@@ -81,9 +81,11 @@ void displayOrganizerMenu(Organizer& organizer){
 					cout<< "Enter number of sold Tickets: ";
 					cin >> soldTicketsCount;
 
+					cin.ignore();
 					cout<< "Enter Stream Link: ";
 					getline(cin,streamLink);
 
+					cin.ignore();
 					cout<< "Enter audience type:  ";
 					getline(cin, audience);
 
@@ -112,9 +114,11 @@ void displayOrganizerMenu(Organizer& organizer){
 					cout<< "Enter number of sold Tickets: ";
 					cin >> soldTicketsCount;
 
+					cin.ignore();
 					cout<< "Enter venue name: ";
 					getline(cin,venue);
 
+					cin.ignore();
 					cout<< "Enter date and Time: ";
 					getline(cin,dateTime);
 
